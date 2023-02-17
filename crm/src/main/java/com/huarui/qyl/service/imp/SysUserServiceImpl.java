@@ -54,15 +54,15 @@ public class SysUserServiceImpl implements SysUserService {
          SysRole sysRole= role.qxian(sysUser.getUsrRoleId()) ;
         System.out.println("----"+sysRole.getRoleId());
         //通过用户的角色来看他的所有父功能权限这个sql语句的结果是得出他父组件下的所有子组件在通过所有的子组件得到子组件的孙子组件         功能权限
-//      List<SysRight> rights= rig.gonnp(sysRole.getRoleId(),0);//登录人的角色 和他的所有父功能
-//        List<guoxigonnbiao>  rights= guo.guox(sysRole.getRoleId(),0);
-//        List<guoxigonnbiao>  rights= guo.guox();
-        List<guoxigonnbiao>  rights= rig.guox(sysRole.getRoleId(),0);
+      List<SysRight> rights= rig.gonnp(sysRole.getRoleId(),0);//登录人的角色 和他的所有父功能
+////        List<guoxigonnbiao>  rights= guo.guox(sysRole.getRoleId(),0);
+////        List<guoxigonnbiao>  rights= guo.guox();
+//        List<guoxigonnbiao>  rights= rig.guox(sysRole.getRoleId(),0);
         System.out.println("-----"+rights.toString());
                   //循环
         //封装成成父子关系的菜单
         List<guoxigonnbiao> ls=new ArrayList<>();
-        for (guoxigonnbiao r : rights){
+        for (SysRight r : rights){
 
 //            List<guoxigonnbiao>  right = guo.guox2(r.getRF_ROLE_ID(),r.getRF_RIGHT_CODE());//r.getRf_role_id(),r.getRight_code()
 //            System.out.println(right.toString());
