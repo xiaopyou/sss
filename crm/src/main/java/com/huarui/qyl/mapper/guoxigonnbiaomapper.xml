@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huarui.qyl.mapper.guoxigonnbiaomapper">
+
+    <select id="guox" resultType="com.huarui.entity.guoxigonnbiao">
+--         SELECT ri.rf_role_id,ri.Rf_right_code,rg.Right_code,rg.Right_parent_code,rg.Right_text from sys_role ro inner join sys_role_right ri  inner join sys_right rg
+--                                                                                                                                                          ON
+--                                                                                                                                                              ro.role_id=rf_role_id
+--         WHERE
+--             ri.Rf_role_id=${roleId} and rg.Right_parent_code=${rightParentId}
+SELECT ri.rf_role_id,ri.Rf_right_code,rg.Right_code,rg.Right_parent_code,rg.Right_text from sys_role ro inner join sys_role_right ri  inner join sys_right rg
+                                                                                                                                                 ON
+                                                                                                                                                     ro.role_id=rf_role_id
+WHERE
+    ri.Rf_role_id=1 and rg.Right_parent_code=0
+    </select>
+
+    <select id="guox2" resultType="com.huarui.entity.guoxigonnbiao">
+        SELECT ri.rf_role_id,ri.Rf_right_code,rg.Right_code,rg.Right_parent_code,rg.Right_text from sys_role ro inner join sys_role_right ri  inner join sys_right rg
+                                                                                                                                                         ON
+                                                                                                                                                             ro.role_id=rf_role_id
+        WHERE
+            ri.Rf_role_id=${roleId} and rg.Right_code=${Right_code}
+    </select>
+</mapper>
