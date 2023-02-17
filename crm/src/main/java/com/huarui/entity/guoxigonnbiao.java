@@ -43,10 +43,22 @@ public class guoxigonnbiao implements Serializable {
         this.RIGHT_TEXT = RIGHT_TEXT;
     }
 
+    public guoxigonnbiao() {
+    }
+
     private int RF_ROLE_ID;
    private int RF_RIGHT_CODE;
     private int RIGHT_CODE;
     private int RIGHT_PARENT_CODE;
+
+    public guoxigonnbiao(int RF_ROLE_ID, int RF_RIGHT_CODE, int RIGHT_CODE, int RIGHT_PARENT_CODE, int RIGHT_TEXT) {
+        this.RF_ROLE_ID = RF_ROLE_ID;
+        this.RF_RIGHT_CODE = RF_RIGHT_CODE;
+        this.RIGHT_CODE = RIGHT_CODE;
+        this.RIGHT_PARENT_CODE = RIGHT_PARENT_CODE;
+        this.RIGHT_TEXT = RIGHT_TEXT;
+    }
+
     private int RIGHT_TEXT;
 
     @Override
