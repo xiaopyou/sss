@@ -1,6 +1,8 @@
 package com.huarui.entity;
 
-public class guoxigonnbiao {
+import java.io.Serializable;
+
+public class guoxigonnbiao implements Serializable {
     public int getRF_ROLE_ID() {
         return RF_ROLE_ID;
     }
